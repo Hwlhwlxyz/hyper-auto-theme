@@ -30,17 +30,14 @@ SolarizedLight = {
   borderColor: sol_borderColor,
   cursorColor: sol_cursorColor,
   colors: sol_colors,
-  termCSS: ``,
-  css: `
+  termCSS: '',
+  css:  `
   * {
     -webkit-font-feature-settings: "liga" on, "calt" on, "dlig" on !important;
     text-rendering: optimizeLegibility !important;
   }
   .hyperterm_main {
     border: transparent !important;
-  }
-  .cursor-node {
-    width: .325rem !important;
   }
   .tabs_list {
     border-color: transparent !important;
@@ -246,7 +243,7 @@ exports.decorateConfig = config => {
     borderColor:finalTheme.borderColor,
     cursorColor:finalTheme.cursorColor,
     colors:finalTheme.colors,
-    selectionColor: 'rgba(31, 188, 210, 0.3)',
+    selectionColor: 'rgba(31, 188, 210,0.5)',
     css: config.css ? config.css + finalTheme.css : finalTheme.css,
     termCSS: config.termCSS ? config.termCSS + finalTheme.termCSS : finalTheme.termCSS
   })
