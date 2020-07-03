@@ -142,27 +142,7 @@ const colors = {
   grayscale: nord_foregroundColor
 };
 
-
-currentTime = new Date()
-console.log(currentTime.getHours(), currentTime.getMinutes())
-
-//determine theme according to time
-startHour = 7;
-endHour = 22;
-if (currentTime.getHours()>=startHour && currentTime.getHours()<=endHour){
-  console.log("light")
-  finalTheme = {
-    foregroundColor:SolarizedLight.foregroundColor,
-    backgroundColor:sol_backgroundColor,
-    borderColor:sol_borderColor,
-    cursorColor:sol_cursorColor,
-    colors:sol_colors,
-    css:  SolarizedLight.css,
-  }
-}
-else{
-  console.log("dark")
-  finalTheme = 
+nordTheme = 
  {
     foregroundColor: nord_foregroundColor,
     backgroundColor: nord_backgroundColor,
@@ -231,12 +211,26 @@ else{
       }
     `
   };
+
+var finalTheme = SolarizedLight;
+currentTime = new Date()
+console.log(currentTime.getHours(), currentTime.getMinutes())
+
+
+//determine theme according to time
+startHour = 7;
+endHour = 22;
+if (currentTime.getHours()>=startHour && currentTime.getHours()<=endHour){
+  console.log("light")
+  finalTheme = SolarizedLight;
+}
+else{
+  console.log("dark")
+  finalTheme = nordTheme;
 }
 
 
 exports.decorateConfig = config => {
-
-
   return Object.assign({}, config, {
     foregroundColor:finalTheme.foregroundColor,
     backgroundColor:finalTheme.backgroundColor,
