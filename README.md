@@ -6,7 +6,7 @@ Change theme of hyper according to time.
 
 Light theme is solarized light, and dark theme is nord.
 
-Try turn webGLRenderer into false if selectionColor doesn't work. 
+Try turning webGLRenderer into false if selectionColor doesn't work. 
 
 https://github.com/vercel/hyper/issues/3632
 
